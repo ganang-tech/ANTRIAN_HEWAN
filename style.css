@@ -1,0 +1,552 @@
+/* Reset dan base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #1a2980, #26d0ce);
+    color: white;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+.logo-container h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.school-info {
+    text-align: right;
+}
+
+.school-info h2 {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+.school-info p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Main display */
+.main-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 30px;
+}
+
+.current-queue, .queue-info {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.current-queue h2, .queue-info h2 {
+    color: #1a2980;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.queue-number {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #1a2980;
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #1a2980, #26d0ce);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.queue-operator {
+    font-size: 1.8rem;
+    text-align: center;
+    color: #26d0ce;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.queue-time {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.info-item {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border-left: 4px solid #1a2980;
+}
+
+.info-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.info-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a2980;
+}
+
+/* Control Panel */
+.control-panel {
+    background: white;
+    border-radius: 15px;
+    margin: 0 30px 30px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.panel-header {
+    background: linear-gradient(to right, #1a2980, #26d0ce);
+    color: white;
+    padding: 20px 30px;
+}
+
+.panel-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+}
+
+.panel-content {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.queue-control, .operator-control, .call-control {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.queue-control h3, .operator-control h3, .call-control h3 {
+    color: #1a2980;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.call-control {
+    grid-column: span 2;
+}
+
+.queue-input {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.input-group {
+    flex: 1;
+    min-width: 150px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.input-group select, .input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.input-group select:focus, .input-group input:focus {
+    outline: none;
+    border-color: #1a2980;
+}
+
+.btn-generate {
+    background: #26d0ce;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-generate:hover {
+    background: #1db6b4;
+}
+
+/* Operator Grid */
+.operator-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.operator-btn {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 15px 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.operator-btn i {
+    font-size: 1.5rem;
+    color: #1a2980;
+}
+
+.operator-btn span {
+    font-weight: 500;
+    color: #333;
+}
+
+.operator-btn.active {
+    background: #1a2980;
+    border-color: #1a2980;
+    color: white;
+}
+
+.operator-btn.active i, .operator-btn.active span {
+    color: white;
+}
+
+.operator-btn:hover:not(.active) {
+    border-color: #26d0ce;
+    transform: translateY(-3px);
+}
+
+/* Call Control */
+.selected-info {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.selected-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.selected-item span {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.selected-item strong {
+    font-size: 1.8rem;
+    color: #1a2980;
+}
+
+.call-actions {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.call-actions button {
+    flex: 1;
+    padding: 18px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 200px;
+}
+
+.btn-call {
+    background: linear-gradient(to right, #1a2980, #26d0ce);
+    color: white;
+}
+
+.btn-call:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px rgba(26, 41, 128, 0.3);
+}
+
+.btn-next {
+    background: #ff9800;
+    color: white;
+}
+
+.btn-next:hover {
+    background: #e68900;
+    transform: translateY(-3px);
+}
+
+.btn-reset {
+    background: #f44336;
+    color: white;
+}
+
+.btn-reset:hover {
+    background: #d32f2f;
+    transform: translateY(-3px);
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.volume-control label {
+    font-weight: 500;
+    color: #555;
+}
+
+.volume-control input[type="range"] {
+    flex: 1;
+    height: 8px;
+    border-radius: 4px;
+    background: #ddd;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.volume-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #1a2980;
+    cursor: pointer;
+}
+
+#volumeValue {
+    font-weight: 600;
+    color: #1a2980;
+    min-width: 40px;
+}
+
+/* Queue List */
+.queue-list {
+    background: white;
+    border-radius: 15px;
+    margin: 0 30px 30px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.queue-list h2 {
+    color: #1a2980;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.queue-history {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.queue-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    border-left: 4px solid #26d0ce;
+}
+
+.queue-item.called {
+    background: #e8f5e9;
+    border-left-color: #4caf50;
+}
+
+.queue-number-small {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a2980;
+}
+
+.queue-operator-small {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+}
+
+.queue-time-small {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* Footer */
+footer {
+    background: #1a2980;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+footer p:first-child {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+/* Responsiveness */
+@media (max-width: 1100px) {
+    .main-display {
+        grid-template-columns: 1fr;
+    }
+    
+    .panel-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .call-control {
+        grid-column: span 1;
+    }
+    
+    .operator-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .school-info {
+        text-align: center;
+    }
+    
+    .queue-number {
+        font-size: 4rem;
+    }
+    
+    .operator-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .call-actions button {
+        min-width: 100%;
+    }
+    
+    .selected-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-display, .control-panel, .queue-list {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    
+    .queue-number {
+        font-size: 3rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .queue-input {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .operator-grid {
+        grid-template-columns: 1fr;
+    }
+}
